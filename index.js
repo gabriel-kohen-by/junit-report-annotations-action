@@ -204,6 +204,9 @@ async function findTestLocation(testReportFile, testcase) {
     const file = await fs.promises.readFile(bestFilePath, {
       encoding: "utf-8",
     });
+
+    bestFilePath = path.relative(".", bestFilePath);
+
     //TODO: make this better won't deal with methods with arguments etc
     const lines = file.split("\n");
     for (let i = 0; i < lines.length; i++) {

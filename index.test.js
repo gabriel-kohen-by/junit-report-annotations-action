@@ -35,7 +35,7 @@ describe("find test location", () => {
         testCase
       );
 
-      expect(filePath).toBe(resolve("src/main/java/org/dummy/ClassTest.java"));
+      expect(filePath).toBe(resolveToRepository("src/main/java/org/dummy/ClassTest.java"));
     });
 
     it("should find line of the method", async () => {
@@ -77,7 +77,7 @@ describe("find test location", () => {
       );
 
       expect(filePath).toBe(
-        resolve("very_long_module1/src/main/java/org/dummy/ClassTest.java")
+        resolveToRepository("very_long_module1/src/main/java/org/dummy/ClassTest.java")
       );
     });
   });
@@ -355,5 +355,9 @@ async function clearFiles() {
 }
 
 function resolve(filePath) {
-  return path.resolve("tmp/" + filePath);
+  return path.resolve(resolveToRepository(filePath));
+}
+
+function resolveToRepository(filePath) {
+  return "tmp/" + filePath;
 }
