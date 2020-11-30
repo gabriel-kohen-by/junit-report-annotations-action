@@ -8,7 +8,6 @@ const path = require("path");
 (async () => {
   try {
     const inputPath = core.getInput("path");
-    const includeSummary = core.getInput("includeSummary");
     const numFailures = core.getInput("numFailures");
     const accessToken = core.getInput("access-token");
     const name = core.getInput("name");
@@ -107,10 +106,6 @@ class TestSummary {
     } else {
       return `Junit test ${testcase.$.name} failed`;
     }
-  }
-
-  isFailedOrErrored() {
-    return this.numFailed > 0 || this.numErrored > 0;
   }
 
   toFormattedMessage() {
