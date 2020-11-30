@@ -30,3 +30,8 @@ A successful run will look like
 A failed run will look like
 
 ![Fail](docs/fail.png?raw=true)
+
+Then you can click on the filename line (`Check failure ... DummyTest.java` here), and you'll be
+redirected to the test file with the annotation like
+
+![Diff view](docs/diff_view.png?raw=true)
