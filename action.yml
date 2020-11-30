@@ -5,20 +5,20 @@ branding:
   color: "green"
 inputs:
   access-token:
-    description: "github token"
+    description: "Github token (generally secrets.GITHUB_TOKEN)"
     required: true
   path:
-    description: "glob to junit xml files"
+    description: "Glob to JUnit XML files"
     required: true
     default: "**/TEST-*.xml"
   numFailures:
-    description: "max number of failed tests to include"
-    require: true
-    default: 10
+    description: "Max number of failed tests to include (-1 for no limit)"
+    required: true
+    default: "-1"
   name:
-    description: "Name of the Check in the github actions UI"
-    require: true
-    default: "Junit Results"
+    description: "Name of the Check in the GitHub Actions UI (if you use several times this action)"
+    required: true
+    default: "Junit Report"
 runs:
   using: "node12"
   main: "index.js"

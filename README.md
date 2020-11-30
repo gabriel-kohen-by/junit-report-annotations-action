@@ -12,7 +12,12 @@ Add check runs to your CI with annotations listing the test failures.
 
 ## Parameters
 
-TODO
+| Name | Description | Default value |
+| ---: | --- | --- |
+| `access-token` | Mandatory Github token | You should set it to `${{ secrets.GITHUB_TOKEN }}` |
+| `path` | Glob to JUnit XML files | `**/TEST-*.xml` |
+| `numFailures` | Max number of failed tests to include (-1 for no limit) | `-1` (no limit) |
+| `name` | Name of the Check in the GitHub Actions UI (if you use several times this action) | `JUnit Report` |
 
 # Demonstration
 
