@@ -157,7 +157,7 @@ class TestSummary {
  */
 async function readTestSuites(file) {
   const data = await fs.promises.readFile(file);
-  const json = await parser.parseStringPromise(data);
+  const json = await new parser.Parser({explicitCharkey: true}).parseStringPromise(data);
 
   if (json.testsuites) {
     return json.testsuites.testsuite

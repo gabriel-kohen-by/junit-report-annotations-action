@@ -154,6 +154,9 @@ describe('readTestSuites', () => {
           '      <failure message="failure_message" type="failure_type">' +
           '<![CDATA[failure_text]]></failure>\n' +
           '    </testcase>\n' +
+          '    <testcase name="test3" classname="org.dummy.DummyTest" time="0.042">\n' +
+          '      <failure>failure_text</failure>' +
+          '    </testcase>\n' +
           '  </testsuite>\n' +
           '  <testsuite name="org.dummy.DummyTest2">\n' +
           '  </testsuite>\n' +
@@ -192,6 +195,16 @@ describe('readTestSuites', () => {
                   message: 'failure_message',
                   type: 'failure_type'
                 },
+                _: 'failure_text'
+              }]
+            },
+            {
+              $: {
+                name: 'test3',
+                classname: 'org.dummy.DummyTest',
+                time: '0.042'
+              },
+              failure: [{
                 _: 'failure_text'
               }]
             }
