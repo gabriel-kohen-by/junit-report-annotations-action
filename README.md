@@ -4,7 +4,7 @@ Add check runs to your CI with annotations listing the test failures.
 ## Setup
 
 ```
-- uses: turpif/junit-report-annotations-action@2.0.1
+- uses: turpif/junit-report-annotations-action@vv2.0.1
   if: always()
   with:
     access-token: ${{ secrets.GITHUB_TOKEN }}
